@@ -1,0 +1,11 @@
+kind: Pod
+metadata:
+  name: maven-app
+spec:
+  containers:
+  - name: maven
+    image: maven:latest
+    command:
+    - cat
+    tty: true
+  

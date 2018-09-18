@@ -8,8 +8,10 @@ library identifier: 'pipeline-library@master', retriever: modernSCM(
 
 pipeline {
     agent {
-        docker {
-            image 'maven:3-alpine'
+        kubernetes {
+          label 'maven-app'
+          defaultContainer 'jnlp'
+          yamlFile 'KubernetesPod.yaml'
         }
     }
     
